@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
 /**
- * Класс содержит создание списка из 10-ти сгенерированных неповторяющихся элементов
- * которые будут составлять основу для создания бинарной (двоичной) кучи
+ * The class contains the creation of a list of 10 generated non-repeating elements,
+ * that will form the basis for creating a binary heap.
  *
  * @author Syniuk Valentyn
  */
@@ -10,13 +10,13 @@ public class BinaryHeapAsQueueMain {
 
     public static void main(String[] args) {
 
-        // список без повторений
+        // no repeat list
         ArrayList<Integer> list = BinaryHeapAsArrayMain.createArrayListWithoutRepeats();
 
-        // создание бинарной кучи
+        // creating a binary heap object
         BinaryHeapAsQueue<Integer> heap = new BinaryHeapAsQueue<>();
 
-        // заполняем кучу элементами
+        // fill a heap of elements
         System.out.print("\nSource heap: ");
         for (Integer element : list) {
             heap.insert(element);
