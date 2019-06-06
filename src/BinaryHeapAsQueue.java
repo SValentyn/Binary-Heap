@@ -2,9 +2,7 @@ import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
 /**
- * Класс для работы с бинарной кучей на основе дерева (с помощью очереди)
- *
- * @param <T> получаемый параметр типа
+ * Class for working with a binary heap based on a tree (using a queue)
  */
 class BinaryHeapAsQueue<T extends Comparable<T>> {
 
@@ -29,7 +27,7 @@ class BinaryHeapAsQueue<T extends Comparable<T>> {
             return list.remove(0);
         }
 
-        T element = list.get(0); // удаляемый элемент очереди
+        T element = list.get(0); // remove queue item
         list.set(0, list.remove(list.size() - 1));
         shiftDown();
 
