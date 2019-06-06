@@ -1,5 +1,5 @@
 /**
- * Класс для работы с бинарной кучей на основе массива
+ * Class for working with a binary heap based on an array
  */
 class BinaryHeapAsArray {
 
@@ -12,12 +12,12 @@ class BinaryHeapAsArray {
     public void sort() {
         int length = array.length;
 
-        // строим кучу (перестраиваем)
+        // build a heap (rebuild)
         for (int i = length / 2 - 1; i >= 0; i--) {
             heapify(array, length, i);
         }
 
-        // Один за другим извлекаются элемент из кучи
+        // one element after another is retrieved from the heap.
         for (int i = length - 1; i >= 0; i--) {
             // Move current root to end
             int temp = array[0];
@@ -29,25 +29,24 @@ class BinaryHeapAsArray {
     }
 
     private void heapify(int[] array, int length, int i) {
-
-        int root = i; // Initialize largest as root
+        int root = i; // initialize largest as root
         int left = 2 * i + 1;
         int right = 2 * i + 2;
 
-        // If left child is larger than root
+        // if left child is larger than root
         if ((left < length) && (array[left] > array[root])) {
             root = left;
         }
 
-        // If right child is larger than largest so far
+        // if right child is larger than largest so far
         if ((right < length) && (array[right] > array[root])) {
             root = right;
         }
 
-        // If largest is not root
+        // if largest is not root
         if (root != i) {
             swap(array, i, root);
-            heapify(array, length, root); // рекурсивно вызываем для поддерева
+            heapify(array, length, root); // recursively call for a subtree
         }
     }
 
