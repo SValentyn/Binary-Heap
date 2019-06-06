@@ -2,8 +2,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * Класс содержит создание массива из 10-ти сгенерированных неповторяющихся элементов
- * которые будут составлять основу для создание бинарной (двоичной) кучи
+ * The class contains the creation of an array of 10 generated non-repeating elements,
+ * that will form the basis for creating a binary heap.
  *
  * @author Syniuk Valentyn
  */
@@ -11,16 +11,16 @@ public class BinaryHeapAsArrayMain {
 
     public static void main(String[] args) {
 
-        // список без повторений
+        // no repeat list
         ArrayList<Integer> list = createArrayListWithoutRepeats();
 
-        // заполняем массив элементами
+        // fill the array with elements
         int[] array = new int[list.size()];
         for (int i = 0; i < 10; i++) {
             array[i] = list.get(i);
         }
 
-        // создание бинарной кучи
+        // creating a binary heap object
         BinaryHeapAsArray heap = new BinaryHeapAsArray(array);
 
         if (heap.isNotEmpty()) {
@@ -38,13 +38,13 @@ public class BinaryHeapAsArrayMain {
         }
     }
 
-    // создание списка из 10-ти сгенерированных неповторяющихся элементов
+    // create a list of 10 generated non-repeating elements
     static ArrayList<Integer> createArrayListWithoutRepeats() {
         ArrayList<Integer> list = new ArrayList<>();
         for (Integer i = 1; i <= 10; i++) {
             list.add(i);
         }
-        Collections.shuffle(list); // "перемешиваем" элементы
+        Collections.shuffle(list);
 
         return list;
     }
